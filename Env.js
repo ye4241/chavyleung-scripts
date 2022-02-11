@@ -134,9 +134,11 @@ function Env(name, opts) {
           try {
             return JSON.parse(this.fs.readFileSync(datPath))
           } catch (e) {
-            return {}
+            return process.env
           }
-        } else return {}
+        } else {
+          return process.env
+        }
       } else return {}
     }
 
